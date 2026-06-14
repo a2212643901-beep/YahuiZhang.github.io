@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>后台密码设置</title>
+    <style>
+      :root {
+        --forest: #1d5a43;
+        --ink: #16211d;
+        --muted: #64726b;
+        --line: #d9e2db;
+        --paper: #fbfcf8;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", Arial, sans-serif;
+      }
+
+      main {
+        width: min(440px, 100%);
+        padding: 32px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 18px 60px rgba(22, 33, 29, 0.12);
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: 28px;
+        line-height: 1.25;
+      }
+
+      p {
+        margin: 0 0 22px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      label {
+        display: block;
+        margin: 16px 0 8px;
+        font-weight: 700;
+      }
+
+      input {
+        width: 100%;
+        min-height: 44px;
+        padding: 0 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        font: inherit;
+      }
+
+      button,
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 46px;
+        margin-top: 20px;
+        border: 0;
+        border-radius: 8px;
+        background: var(--forest);
+        color: var(--white);
+        font: inherit;
+        font-weight: 800;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .message {
+        min-height: 24px;
+        margin-top: 16px;
+        color: var(--muted);
+      }
+
+      .error {
+        color: #a33a2f;
+      }
+
+      .success {
+        color: var(--forest);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="title">设置后台密码</h1>
+      <p id="description">请输入新的后台登录密码。完成后可返回后台登录并编辑网站内容。</p>
+      <form id="passwordForm">
+        <label for="password">新密码</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required />
+
+        <label for="confirmPassword">再次输入新密码</label>
+        <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required />
+
+        <button type="submit">保存新密码</button>
+      </form>
+      <p class="message" id="message" role="status"></p>
+    </main>
+
+    <script type="module">
+      import { acceptInvite, recoverPassword } from "https://cdn.jsdelivr.net/npm/@netlify/identity@1.2.0/dist/main.js";
+
+      const hash = (window.location.hash || "").replace(/^#\/?/, "");
+      const params = new URLSearchParams(hash);
+      const recoveryToken = params.get("recovery_token");
+      const inviteToken = params.get("invite_token");
+      const title = document.querySelector("#title");
+      const description = document.querySelector("#description");
+      const form = document.querySelector("#passwordForm");
+      const message = document.querySelector("#message");
+
+      const setMessage = (text, className = "") => {
+        message.textContent = text;
+        message.className = `message ${className}`.trim();
+      };
+
+      if (inviteToken) {
+        title.textContent = "设置后台账号密码";
+        description.textContent = "这是 Netlify 后台邀请链接。请输入密码完成账号创建。";
+      }
+
+      if (!recoveryToken && !inviteToken) {
+        form.hidden = true;
+        setMessage("链接中没有有效的后台密码 token。请重新发送邀请或密码重置邮件。", "error");
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+
+        if (password !== confirmPassword) {
+          setMessage("两次输入的密码不一致。", "error");
+          return;
+        }
+
+        setMessage("正在保存新密码...");
+        form.querySelector("button").disabled = true;
+
+        try {
+          if (recoveryToken) {
+            await recoverPassword(recoveryToken, password);
+          } else {
+            await acceptInvite(inviteToken, password);
+          }
+
+          setMessage("密码已保存。正在进入后台...", "success");
+          window.setTimeout(() => {
+            window.location.href = "/admin/";
+          }, 900);
+        } catch (error) {
+          setMessage(error?.message || "密码设置失败，请重新发送邮件后再试。", "error");
+          form.querySelector("button").disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

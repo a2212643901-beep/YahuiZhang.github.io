@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>张亚慧研究员个人主页</title>
+    <meta
+      name="description"
+      content="中国林业科学研究院木材工业研究所张亚慧研究员个人介绍网站。"
+    />
+    <link rel="canonical" href="https://yahuizhang.netlify.app/" />
+    <meta property="og:url" content="https://yahuizhang.netlify.app/" />
+    <meta property="og:title" content="张亚慧研究员个人主页" />
+    <meta property="og:description" content="中国林业科学研究院木材工业研究所张亚慧研究员个人介绍网站。" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand-mark" data-text="brandMark">木</span>
+        <span>
+          <strong data-text="name">张亚慧研究员</strong>
+          <small data-text="labName">木材工业研究所</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#profile">个人介绍</a>
+        <a href="#research">研究方向</a>
+        <a href="#publications">论文成果</a>
+        <a href="#projects">科研项目</a>
+        <a href="#gallery">课题组日常</a>
+        <a href="#team">团队成员</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img class="hero-image" data-src="heroImage" src="assets/hero-lab.png" alt="张亚慧研究员团队工作场景" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow" data-text="heroEyebrow">中国林业科学研究院木材工业研究所</p>
+          <h1 data-text="heroTitle">木材科学、木材工业与绿色低碳材料研究</h1>
+          <p class="hero-copy" data-text="heroIntro">
+            聚焦木材功能改良、木质材料高值化利用和木材工业绿色制造，服务林业产业升级与“双碳”目标。
+          </p>
+          <div class="hero-actions" aria-label="快捷操作">
+            <a class="button primary" href="#team">查看团队</a>
+            <a class="button ghost" href="#publications">代表成果</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section profile-section" id="profile">
+        <div class="section-heading">
+          <p class="eyebrow">Profile</p>
+          <h2>个人介绍</h2>
+        </div>
+        <div class="profile-grid">
+          <article class="profile-card">
+            <div class="avatar" data-text="avatarText" aria-hidden="true">张</div>
+            <div>
+              <h3 data-text="fullTitle">张亚慧 研究员</h3>
+              <p data-text="bio"></p>
+              <ul class="contact-list" id="contactList"></ul>
+            </div>
+          </article>
+          <div class="stats" id="statsList"></div>
+        </div>
+      </section>
+
+      <section class="section muted" id="research">
+        <div class="section-heading">
+          <p class="eyebrow">Research</p>
+          <h2>研究方向</h2>
+        </div>
+        <div class="research-grid" id="researchList"></div>
+      </section>
+
+      <section class="section split" id="publications">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">Publications</p>
+          <h2>论文成果</h2>
+          <p data-text="publicationNote"></p>
+        </div>
+        <div class="publication-list" id="publicationList"></div>
+      </section>
+
+      <section class="section muted" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>科研项目</h2>
+        </div>
+        <div class="project-timeline" id="projectList"></div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-heading">
+          <p class="eyebrow">Lab Life</p>
+          <h2>课题组日常照片</h2>
+        </div>
+        <div class="gallery-grid" id="galleryList"></div>
+      </section>
+
+      <section class="section muted" id="team">
+        <div class="section-heading">
+          <p class="eyebrow">Team</p>
+          <h2>团队成员</h2>
+        </div>
+        <div class="team-grid" id="teamList"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong data-text="footerTitle">张亚慧研究员团队</strong>
+        <p data-text="footerSubtitle">木材科学 · 绿色制造 · 低碳材料</p>
+      </div>
+      <a data-text="email" data-href="mailto:email" href="mailto:professor@example.edu.cn">professor@example.edu.cn</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

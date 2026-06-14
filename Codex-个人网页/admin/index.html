@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>网站内容后台</title>
+  </head>
+  <body>
+    <script>
+      const identityHashKeys = [
+        "confirmation_token",
+        "email_change_token",
+        "invite_token",
+        "recovery_token",
+      ];
+      const hash = window.location.hash || "";
+      const normalizedHash = hash.startsWith("#/") ? `#${hash.slice(2)}` : hash;
+      const hasIdentityHash = identityHashKeys.some((key) => normalizedHash.includes(`${key}=`));
+
+      if (hasIdentityHash && normalizedHash !== hash) {
+        window.location.replace(`${window.location.pathname}${normalizedHash}`);
+      }
+    </script>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </body>
+</html>

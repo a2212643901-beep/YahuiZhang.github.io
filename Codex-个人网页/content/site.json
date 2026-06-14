@@ -1,0 +1,140 @@
+{
+  "brandMark": "木",
+  "name": "张亚慧研究员",
+  "labName": "中国林业科学研究院木材工业研究所",
+  "fullTitle": "张亚慧 研究员",
+  "avatarText": "张",
+  "email": "professor@example.edu.cn",
+  "heroImage": "assets/hero-lab.png",
+  "heroEyebrow": "中国林业科学研究院木材工业研究所 · 研究员",
+  "heroTitle": "木材科学、木材工业与绿色低碳材料研究",
+  "heroIntro": "聚焦木材功能改良、木质材料高值化利用和木材工业绿色制造，服务林业产业升级、木材工业高质量发展与“双碳”目标。",
+  "bio": "张亚慧，中国林业科学研究院木材工业研究所研究员。长期围绕木材科学与工程、木质功能材料、木材保护与绿色制造等方向开展科研和研究生培养工作。此处内容可在后台替换为导师正式简介、教育经历、任职经历、学术兼职和招生方向。",
+  "publicationNote": "以下为展示用示例条目。后台可维护论文题名、年份、期刊、作者角色和 DOI 链接。",
+  "footerTitle": "张亚慧研究员团队",
+  "footerSubtitle": "木材科学 · 绿色制造 · 低碳材料",
+  "contacts": [
+    {
+      "label": "单位",
+      "value": "中国林业科学研究院木材工业研究所"
+    },
+    {
+      "label": "邮箱",
+      "value": "professor@example.edu.cn"
+    },
+    {
+      "label": "地址",
+      "value": "北京市海淀区东小府1号"
+    }
+  ],
+  "stats": [
+    {
+      "value": "80+",
+      "label": "发表论文"
+    },
+    {
+      "value": "10+",
+      "label": "科研项目"
+    },
+    {
+      "value": "20+",
+      "label": "授权专利"
+    },
+    {
+      "value": "15+",
+      "label": "培养学生"
+    }
+  ],
+  "research": [
+    {
+      "title": "木材功能改良",
+      "description": "围绕木材尺寸稳定性、耐久性、阻燃性和表界面性能提升，发展高效、绿色、可规模化的改良技术。"
+    },
+    {
+      "title": "木质复合材料",
+      "description": "研究木质资源高值化利用、复合材料结构设计、胶黏与界面调控，以及材料性能评价方法。"
+    },
+    {
+      "title": "绿色低碳制造",
+      "description": "面向木材工业节能降碳和循环利用，开展工艺优化、生命周期评价与产业化应用研究。"
+    }
+  ],
+  "publications": [
+    {
+      "year": "2026",
+      "title": "Green modification strategies for high-performance wood-based materials",
+      "meta": "Wood Science and Technology · 通讯作者"
+    },
+    {
+      "year": "2025",
+      "title": "Interface engineering in sustainable wood composites for structural applications",
+      "meta": "Composites Part B · 第一/通讯作者"
+    },
+    {
+      "year": "2024",
+      "title": "Low-carbon manufacturing pathways for wood industry transformation",
+      "meta": "Journal of Cleaner Production · 通讯作者"
+    },
+    {
+      "year": "2023",
+      "title": "Durability enhancement of engineered wood products under humid environments",
+      "meta": "Construction and Building Materials · 合作作者"
+    }
+  ],
+  "projects": [
+    {
+      "period": "2026-2030",
+      "title": "木材工业绿色低碳制造关键技术研究",
+      "description": "围绕木材加工过程节能降碳、资源高效利用和产品性能提升开展技术攻关。"
+    },
+    {
+      "period": "2024-2027",
+      "title": "木质功能材料界面调控与性能提升机制",
+      "description": "研究木材细胞壁、树脂体系和功能组分之间的界面作用机制及材料设计方法。"
+    },
+    {
+      "period": "2022-2025",
+      "title": "木材保护与耐久性评价技术体系",
+      "description": "建立面向不同应用场景的木材耐久性评价、快速检测和工程应用方法。"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "assets/hero-lab.png",
+      "alt": "团队科研讨论",
+      "caption": "团队科研讨论"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1581093458791-9d42f9f9f682?auto=format&fit=crop&w=900&q=80",
+      "alt": "材料实验室",
+      "caption": "材料制备与性能测试"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80",
+      "alt": "实验设备",
+      "caption": "仪器分析与工艺验证"
+    }
+  ],
+  "team": [
+    {
+      "initial": "博",
+      "name": "博士后 / 青年教师",
+      "description": "木质复合材料、材料表征与性能评价"
+    },
+    {
+      "initial": "博",
+      "name": "博士研究生",
+      "description": "木材功能改良与耐久性提升"
+    },
+    {
+      "initial": "硕",
+      "name": "硕士研究生",
+      "description": "绿色胶黏剂与界面调控"
+    },
+    {
+      "initial": "助",
+      "name": "科研助理",
+      "description": "实验管理、样品测试与项目支撑"
+    }
+  ]
+}
