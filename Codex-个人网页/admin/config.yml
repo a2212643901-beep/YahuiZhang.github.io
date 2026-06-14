@@ -1,0 +1,80 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "zh_Hans"
+
+collections:
+  - name: "site"
+    label: "网站内容"
+    files:
+      - name: "homepage"
+        label: "首页全部信息"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - { label: "导航标识文字", name: "brandMark", widget: "string" }
+          - { label: "导师姓名", name: "name", widget: "string" }
+          - { label: "单位/课题组名称", name: "labName", widget: "string" }
+          - { label: "完整职称", name: "fullTitle", widget: "string" }
+          - { label: "头像文字", name: "avatarText", widget: "string" }
+          - { label: "邮箱", name: "email", widget: "string" }
+          - { label: "首页横幅图", name: "heroImage", widget: "image", required: false }
+          - { label: "首页小标题", name: "heroEyebrow", widget: "string" }
+          - { label: "首页主标题", name: "heroTitle", widget: "string" }
+          - { label: "首页简介", name: "heroIntro", widget: "text" }
+          - { label: "个人简介", name: "bio", widget: "text" }
+          - { label: "论文区说明", name: "publicationNote", widget: "text", required: false }
+          - { label: "页脚标题", name: "footerTitle", widget: "string" }
+          - { label: "页脚副标题", name: "footerSubtitle", widget: "string" }
+          - label: "联系方式"
+            name: "contacts"
+            widget: "list"
+            fields:
+              - { label: "标签", name: "label", widget: "string" }
+              - { label: "内容", name: "value", widget: "string" }
+          - label: "统计数字"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "数字", name: "value", widget: "string" }
+              - { label: "说明", name: "label", widget: "string" }
+          - label: "研究方向"
+            name: "research"
+            widget: "list"
+            fields:
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "描述", name: "description", widget: "text" }
+          - label: "论文成果"
+            name: "publications"
+            widget: "list"
+            fields:
+              - { label: "年份", name: "year", widget: "string" }
+              - { label: "论文题名", name: "title", widget: "string" }
+              - { label: "期刊/作者信息", name: "meta", widget: "string" }
+          - label: "科研项目"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "项目周期", name: "period", widget: "string" }
+              - { label: "项目名称", name: "title", widget: "string" }
+              - { label: "项目简介", name: "description", widget: "text" }
+          - label: "课题组日常照片"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - { label: "图片", name: "image", widget: "image" }
+              - { label: "替代文字", name: "alt", widget: "string", required: false }
+              - { label: "图片说明", name: "caption", widget: "string" }
+          - label: "团队成员"
+            name: "team"
+            widget: "list"
+            fields:
+              - { label: "头像文字", name: "initial", widget: "string" }
+              - { label: "姓名/角色", name: "name", widget: "string" }
+              - { label: "研究方向/说明", name: "description", widget: "text" }
